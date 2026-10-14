@@ -34,7 +34,7 @@ val ensureLocationPermissionsPatch = resourcePatch(
                 val permissions = manifest.getElementsByTagName(tagName)
                 for (i in 0 until permissions.length) {
                     val permission = permissions.item(i) as? Element ?: continue
-                    val name = permission.getAttributeNS(NS_ANDROID, "name")
+                    val name = permission.getAttributeNS("http://schemas.android.com/apk/res/android", "name")
                     if (name.isNotEmpty()) declaredPermissions += name
                 }
             }
